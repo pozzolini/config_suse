@@ -1,26 +1,18 @@
 ﻿
-
+configure fstab in /etc/fstab 
 UUID=705a0628-8ac9-4f69-8ccc-3c36f48f52af /mnt/hdmidia ext4    defaults        0 0
 
 
-
-
-
-
-ports=32400/tcp
-|3005/tcp
-|5353/udp
-|8324/tcp
-|32410:32414/udp
-|1900/udp
-|32469/tcp
-
-
+configure firewall to plex remote
 sudo firewall-cmd --zone=public --add-port={5353,1900}/udp
 sudo firewall-cmd --zone=public --add-port={32400,3005,8324,32469}/tcp 
 sudo firewall-cmd --zone=public --add-port=32410-32414/udp
 sudo firewall-cmd --permanent --add-port={5353,1900}/udp
 sudo firewall-cmd --permanent --add-port={32400,3005,8324,32469}/tcp
 sudo firewall-cmd --permanent --add-port=32410-32414/udp
-
 sudo firewall-cmd --reload
+
+
+configure wi-fi no sleep
+sudo iw dev wlp0s20u2u2 set power_save off
+sudo iw wlp0s20u2u2 get power_save
