@@ -14,5 +14,7 @@ sudo firewall-cmd --reload
 
 
 configure wi-fi no sleep
+/sbin/iw dev
+sudo iw wlp0s20u2u2 link
 sudo iw dev wlp0s20u2u2 set power_save off
 sudo iw wlp0s20u2u2 get power_save
