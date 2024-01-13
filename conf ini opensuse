@@ -3,7 +3,7 @@ rpm --import https://downloads.plex.tv/plex-keys/PlexSign.key
 zypper ref
 
 configure fstab in /etc/fstab 
-UUID=705a0628-8ac9-4f69-8ccc-3c36f48f52af /mnt/hdmidia ext4    defaults        0 0
+UUID=705a0628-8ac9-4f69-8ccc-3c36f48f52af /mnt/plex ext4    defaults        0 0
 
 
 configure firewall to plex remote
